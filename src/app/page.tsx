@@ -11,13 +11,6 @@ const STYLES = [
   { id: "southern", label: "Southern", emoji: "🤠" },
 ];
 
-const EXAMPLES = [
-  "I would like to express my sincere gratitude for your assistance with this matter.",
-  "The meeting has been rescheduled to accommodate all participants' availability.",
-  "I regret to inform you that the project deadline will not be met.",
-  "Please be advised that your request has been processed accordingly.",
-];
-
 export default function Home() {
   const [text, setText] = useState("");
   const [style, setStyle] = useState("casual");
@@ -56,11 +49,6 @@ export default function Home() {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  function handleExample(example: string) {
-    setText(example);
-    setResult("");
-    setCopied(false);
-  }
 
   return (
     <div className="flex-1 flex flex-col">
@@ -68,7 +56,12 @@ export default function Home() {
       <header className="border-b border-border px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl">🃏</span>
+            <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#0f0f0f"/>
+              <rect x="4" y="5" width="24" height="17" rx="4" fill="#f59e0b"/>
+              <polygon points="8,22 14,22 9,28" fill="#f59e0b"/>
+              <text x="16" y="17" fontFamily="Arial Black, Arial" fontWeight="900" fontSize="10" fill="#0f0f0f" textAnchor="middle" letterSpacing="-0.5">yo!</text>
+            </svg>
             <span className="font-bold text-lg tracking-tight">
               NativeJoker
             </span>
@@ -153,23 +146,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Examples */}
-        <section className="space-y-3">
-          <p className="text-xs text-muted uppercase tracking-wider font-medium">
-            Try an example
-          </p>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {EXAMPLES.map((ex) => (
-              <button
-                key={ex}
-                onClick={() => handleExample(ex)}
-                className="rounded-lg border border-border bg-card/50 p-3 text-left text-sm text-muted hover:text-foreground hover:border-accent/30 transition-colors line-clamp-2"
-              >
-                &ldquo;{ex}&rdquo;
-              </button>
-            ))}
-          </div>
-        </section>
 
         {/* Ad placeholder */}
         <div className="border border-dashed border-border rounded-lg p-8 text-center text-xs text-muted">
