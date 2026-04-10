@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: "NativeJoker — Translate Formal English to Native Slang",
   description:
     "Turn boring formal English into fun native slang instantly. Free online slang translator — Gen Z, casual, street talk and more.",
