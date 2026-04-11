@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  verification: {
+    other: {
+      "google-adsense-account": "ca-pub-5799728286425407",
+    },
+  },
   title: "NativeJoker — Translate Formal English to Native Slang",
   description:
     "Turn boring formal English into fun native slang instantly. Free online slang translator — Gen Z, casual, street talk and more.",
@@ -45,7 +50,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5799728286425407"
+          crossOrigin="anonymous"
+        />
+        {children}
+      </body>
     </html>
   );
 }
