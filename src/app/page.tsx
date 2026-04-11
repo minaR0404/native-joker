@@ -157,7 +157,7 @@ export default function Home() {
       <footer className="border-t border-border px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between text-xs text-muted">
           <span>NativeJoker &copy; {new Date().getFullYear()}</span>
-          <span>Free slang translator</span>
+          <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
         </div>
       </footer>
     </div>
